@@ -17,6 +17,9 @@ pip install -r requirements.txt
 
 ## Running the code
 
+export GITHUB_USERNAME= <github-email-or-username>
+export GITHUB_PASSWORD= <github-password>
+
 ### Spin up the service
 
 ```
@@ -25,10 +28,17 @@ python -m run
 ```
 
 ### Making Requests
+To get merged response from both git and bitbucket we implement this end point:
 
+Functions supported:
+* Get merged information about such team  
 ```
-curl -i "http://127.0.0.1:5000/health-check"
+curl -i "http://127.0.0.1:5000/team?name=***"
+or using any external client eg: postman
 ```
 
+Not supported functions:
+* Get branches, commits, clones 
 
-## What'd I'd like to improve on...
+* Get forked information
+
